@@ -48,13 +48,8 @@ public class BookImplementation implements IbookDao {
     @Override
     public List showBooks() {
         String jpaQuery = "from Books";
-        Query query = entityManager.createQuery(jpaQuery);
-        query.setParameter("books",query);
+        Query query = entityManager.createQuery(jpaQuery,Book.class);
         List<Book> list = query.getResultList();
-        Book book = null;
-        if (!list.isEmpty()) {
-            book = list.get(0);
-        }
         return list;
     }
 

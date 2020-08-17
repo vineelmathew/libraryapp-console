@@ -2,16 +2,16 @@ package com.dxctraining.book.entities;
 
 import com.dxctraining.author.entities.Author;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
-
+@Entity
 public class Fictionbook extends Book {
-
-    @Id
     private String id;
     private String Iname;
     public Fictionbook(String name, Author author, String id) {
         super(name, author, id);
+        this.id = id;
     }
     @Override
     public String getId() {

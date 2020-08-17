@@ -10,17 +10,20 @@ import java.util.Objects;
 @Inheritance(strategy =InheritanceType.JOINED)
 public class Book {
 
-
-    @Id
+        @Id
         private String id;
         private String name;
-        @ManyToOne
+        @ManyToOne(cascade = CascadeType.ALL)
         private Author author;
         public Book(String name,Author author,String id) {
             this.name = name;
             this.author=author;
             this.id=id;
         }
+    public Book() {
+       super();
+    }
+
         public Author getAuthor() {
             return author;
         }

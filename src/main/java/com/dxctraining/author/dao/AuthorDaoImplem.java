@@ -3,10 +3,11 @@ package com.dxctraining.author.dao;
 import com.dxctraining.author.entities.Author;
 import com.dxctraining.author.exceptions.AuthorNotFoundException;
 import com.dxctraining.author.exceptions.InvalidArgumentException;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
+@Repository
 public class AuthorDaoImplem implements IAuthorDao {
 
     @PersistenceContext
